@@ -1,3 +1,4 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C0C619KV5Z)
 # checksum
 A command line tool to check and correct the Portable Executable (PE) file checksums.
 
