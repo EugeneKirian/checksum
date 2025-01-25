@@ -161,16 +161,16 @@ static int process_file(context* ctx, const char* path) {
 
 static void print_usage() {
     printf("\n"
-    "Copyright (c) 2025 Eugene Kirian <eugenekirian@gmail.com>\n\n"
-    "Usage: checksum [--check] [--quiet] [--no-backup] <file> [[file] ...]\n\n"
-    "checksum fixes the Portable Executable (PE) checksum for 32-bit and 64-bit binaries.\n\n"
-    "Options must be provided before the list of files:\n"
-    "    --check     - perform checksum validation only.\n"
-    "    --quiet     - suppress non-error output.\n"
-    "    --no-backup - suppress creation of backup files.\n\n"
-    "The exit code meaning:\n"
-    "    Number of files with invalid checksum that were not updated.\n"
-    "    Number of files with invalid checksum when running with --check.\n"
+        "Copyright (c) 2025 Eugene Kirian <eugenekirian@gmail.com>\n\n"
+        "Usage: checksum [--check] [--quiet] [--no-backup] <file> [[file] ...]\n\n"
+        "checksum fixes the Portable Executable (PE) checksum for 32-bit and 64-bit binaries.\n\n"
+        "Options must be provided before the list of files:\n"
+        "    --check     - perform checksum validation only.\n"
+        "    --quiet     - suppress non-error output.\n"
+        "    --no-backup - suppress creation of backup files.\n\n"
+        "The exit code meaning:\n"
+        "    Number of files with invalid checksum that were not updated.\n"
+        "    Number of files with invalid checksum when running with --check.\n"
     );
 }
 
@@ -191,6 +191,7 @@ int main(int argc, char** argv) {
         if (!processing) {
             if (strcmpi("--check", argv[i]) == 0) { ctx.check = TRUE; }
             else if (strcmpi("--quiet", argv[i]) == 0) { ctx.quiet = TRUE; }
+            else if (strcmpi("--silent", argv[i]) == 0) { ctx.quiet = TRUE; }
             else if (strcmpi("--no-backup", argv[i]) == 0) { ctx.backup = FALSE; }
             else {
                 if (!ctx.quiet) {
